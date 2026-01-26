@@ -1,12 +1,45 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .container {
@@ -15,11 +48,22 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .container {
+    background-color: #2a2a2a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
     text-align: center;
     color: #333;
+    transition: color 0.3s;
+}
+
+body.dark-mode h1 {
+    color: #e0e0e0;
 }
 
 .input-section {
@@ -32,6 +76,15 @@ h1 {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: white;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode #todo-input {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+    border-color: #555;
 }
 
 #add-btn {
@@ -58,6 +111,11 @@ h1 {
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #eee;
+    transition: border-color 0.3s;
+}
+
+body.dark-mode .todo-item {
+    border-bottom-color: #444;
 }
 
 .todo-item:last-child {
