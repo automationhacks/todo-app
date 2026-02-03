@@ -1,7 +1,7 @@
 ---
 description: Generate an implementation plan for new features or refactoring existing code.
 name: Planner
-tools: ["web/fetch", "web/githubRepo", "search", "search/usages"]
+tools: ["read/readFile", "search", "web"]
 model: Claude Haiku 4.5 (copilot)
 handoffs:
   - label: Implement Plan
